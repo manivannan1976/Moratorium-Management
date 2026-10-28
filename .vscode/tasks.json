@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Deploy locally",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Stop local deployment",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/stop.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": "dotnet test",
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build API",
+      "type": "shell",
+      "command": "dotnet build src/MoratoriumManagement.Api",
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Angular dev server",
+      "type": "shell",
+      "command": "npx ng serve --proxy-config proxy.conf.json",
+      "options": { "cwd": "${workspaceFolder}/web" },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

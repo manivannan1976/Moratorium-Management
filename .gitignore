@@ -1,0 +1,12 @@
+bin/
+obj/
+deploy/
+storage/
+*.db
+*.db-shm
+*.db-wal
+node_modules/
+web/dist/
+web/.angular/
+.vs/
+*.user
